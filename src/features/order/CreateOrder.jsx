@@ -41,23 +41,23 @@ function CreateOrder() {
 
   return (
     <div>
-      <h2>Ready to order? Let's go!</h2>
+      <h2 className="mb-2 text-xl font-semibold">Ready to order? Let's go!</h2>
 
       <Form method="POST">
-        <div>
-          <label>First Name</label>
+        <div className="mb-2 font-pizza">
+          <label className="mb-1 inline-block">First Name</label>
           <input type="text" name="customer" required className={customInput} />
         </div>
 
-        <div>
-          <label>Phone number</label>
+        <div className="mb-2 font-pizza">
+          <label className="mb-1 inline-block">Phone number</label>
           <div>
             <input type="tel" name="phone" className={customInput} required />
           </div>
         </div>
 
-        <div>
-          <label>Address</label>
+        <div className="mb-2 font-pizza">
+          <label className="mb-1 inline-block">Address</label>
           <div>
             <input
               type="text"
@@ -68,7 +68,7 @@ function CreateOrder() {
           </div>
         </div>
 
-        <div>
+        <div className="text-sm font-semibold">
           <input
             type="checkbox"
             name="priority"
@@ -85,7 +85,12 @@ function CreateOrder() {
           {/* <button className="rounded-full bg-yellow-400 px-3 py-3 text-sm font-semibold transition-colors duration-300 hover:bg-yellow-200">
             Order now
           </button> */}
-          <Button>Order Now</Button>
+          <button
+            type="submit"
+            className="rounded-full bg-yellow-400 px-3 py-3 text-sm font-semibold transition-colors duration-300 hover:bg-yellow-200"
+          >
+            Order Now
+          </button>
         </div>
       </Form>
     </div>
