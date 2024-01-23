@@ -1,8 +1,26 @@
 import { formatCurrency } from "../utils/helpers";
 import Button from "../ui/Button";
+import { useDispatch } from "react-redux";
+import { setItem } from "../cart/cartSlice";
 
 function MenuItem({ pizza }) {
   const { id, name, unitPrice, ingredients, soldOut, imageUrl } = pizza;
+  const dispatch = useDispatch();
+
+  function handleAddPizza() {
+    const newPizza = {
+      id,
+      name,
+      unitPrice,
+      imageUrl,
+      ingredients,
+      soldOut,
+      quantity: 1,
+      totalPrice: 1 * unitPrice,
+    };
+
+    dispatch(setItem(newPizza));
+  }
 
   return (
     <li className="mb-3 flex gap-4 font-pizza">
@@ -18,7 +36,7 @@ function MenuItem({ pizza }) {
         </div>
         <div className="mt-auto flex items-center justify-between text-sm">
           {!soldOut ? <p>{formatCurrency(unitPrice)}</p> : <p>Sold out</p>}
-          <Button>Add to cart</Button>
+          <Button onClick={() => handleAddPizza()}>Add to cart</Button>
         </div>
       </div>
     </li>
