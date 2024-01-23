@@ -1,19 +1,24 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import Username from "../user/Username";
+import { useSelector } from "react-redux";
 
 export default function Header() {
+  const username = useSelector((state) => state.user.username);
   const [query, setQuery] = useState("");
+  console.log(username);
 
   function handleForm(e) {
     e.preventDefault();
   }
   return (
     <>
-      <header className="alig font-pizza flex items-center justify-between border-b-4 border-stone-800 bg-yellow-500 p-[15px]">
+      <header className="alig flex items-center justify-between border-b-4 border-stone-800 bg-yellow-500 p-[15px] font-pizza">
         <Link to="/" className="font-semibold uppercase">
           Pizza Co
         </Link>
-        <div>
+        <div className="flex items-center gap-4">
+          {username && <Username>{username}</Username>}
           <form onSubmit={handleForm}>
             <input
               type="text"

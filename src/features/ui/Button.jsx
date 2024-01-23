@@ -10,6 +10,8 @@ export default function Button({ children, to, type }) {
       "rounded-full px-3 py-3 text-sm font-semibold transition-colors duration-300 hover:bg-stone-200",
   };
 
+  if (!to) return <button className={baseStyle}>{children}</button>;
+
   return (
     <Link to={to} className={type ? styles[type] : styles.base}>
       {children}
