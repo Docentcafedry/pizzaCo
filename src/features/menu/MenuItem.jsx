@@ -9,12 +9,9 @@ function MenuItem({ pizza }) {
 
   function handleAddPizza() {
     const newPizza = {
-      id,
+      pizzaId: id,
       name,
       unitPrice,
-      imageUrl,
-      ingredients,
-      soldOut,
       quantity: 1,
       totalPrice: 1 * unitPrice,
     };

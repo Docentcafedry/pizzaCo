@@ -10,6 +10,8 @@ export default function Button({ children, to, type, onClick }) {
       "rounded-full px-3 py-3 text-sm font-semibold transition-colors duration-300 hover:bg-stone-200",
     small:
       "rounded-full bg-yellow-400 px-2 py-1 text-sm font-semibold transition-colors duration-300 hover:bg-yellow-200",
+    input:
+      "rounded-full bg-yellow-400 px-1 py-1 text-sm font-semibold transition-colors duration-300 hover:bg-yellow-200",
   };
 
   if (onClick)
