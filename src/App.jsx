@@ -7,6 +7,7 @@ import CreateOrder, {
 } from "./features/order/CreateOrder";
 import Order, { loader as orderLoader } from "./features/order/Order";
 import Home from "./features/ui/Home";
+import { action as PriorityAction } from "./features/ui/SetPriority";
 
 const router = createBrowserRouter([
   {
@@ -34,6 +35,7 @@ const router = createBrowserRouter([
         path: "order/:orderId",
         element: <Order />,
         loader: orderLoader,
+        action: PriorityAction,
       },
     ],
   },
